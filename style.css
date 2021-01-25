@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: gray;
+    /* margin: 9 auto; */
+    /* height: 100vh; */
+    overflow: hidden;
+}
+
+#birds {
+    height: 100vh;
+}
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    background: cornsilk;
+    /* display: flex; */
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    /* margin: auto; */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    /* margin: 0 auto; */
+    text-align: center;
+}
+
+.water {
+    width: 480px;
+    height: 480px;
+    box-shadow: 0 0 10px #fff;
+    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.droplet{
+    width: 72px;
+    height: 72px;
+    background: transparent;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px #000;
+    border-radius: 50%;
+    opacity: 1;
+}

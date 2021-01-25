@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VantaJs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: aqua;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .container{
+            position: relative;
+            overflow-y: scroll;
+            height: 100vh;
+            scroll-snap-type: y proximity;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+        #header {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-8%);
+            color: #fff;
+            height: auto;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        #sec1 {
+            height: 100%;
+        }
+        #sec2 {
+            height: 100vh;
+        }
+        #sec3 {
+            height: 100vh;
+        }
+        #sec4 {
+            height: 100vh;
+        }
+        #sec5 {
+            height: 100vh;
+            width: auto;
+        }
+        #sec6 {
+            height: 100vh;
+        }
+        /* #sec7 {
+            height: 100vh;
+        }
+        #sec8 {
+            height: 100vh;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">Animated Backgrounds</h1>
+        <section id="sec1"></section>
+        <section id="sec2"></section>
+        <section id="sec3"></section>
+        <section id="sec4"></section>
+        <section id="sec5"></section>
+        <section id="sec6"></section>
+        <!-- <section id="sec7"></section>
+        <section id="sec8"></section> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" integrity="sha512-jeYvJdyAYkpQCY/omvCYQo89qA5YxDW4JBT7COPsHT2sOAanwxkZRFeP9gc69b5reSDpZIoyCqZQZcWZkbB5Gw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.birds.min.js" integrity="sha512-bP14TXFcd8A4oGg1S37dzXTOSUiNl6/6e2sPbkUzuPgU4lDAcrKLIs8mKLfp6OJg4K+EPn5oL6CVd2wKtuNcrg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js" integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.dots.min.js" integrity="sha512-uZ/MlaMuG5UBFDs6D341appC7UgWzymqucQBfMjW46axRlidANOiDx4jJGXgQ1NVZm1pKPGI48fI/JHUe6Yq1A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.rings.min.js" integrity="sha512-Kj+kCumYsxB5Lu97wKvxeGU+uC9fYcoyDAMhyRWV9y016KvznWPmut1rBKuRUcPLVz581STH63EtWA0UVTZ0zw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js" integrity="sha512-au5zlskyQcIGWsL+hWwp6NchmTWSK7UF84uGi2Vr+41wT/TE4oGyVvPzdxyZ2+7ms+8W2NfnsrmfcDaVQYekAA==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.trunk.min.js" integrity="sha512-WKGZ4lwjo3ZSZk9MppTAgaSeUz5+dF6SjTrMulCI3WBdEmIXBu+A4eVyTiCOmXCM0KU/sGJbMWfx35Fea/7x8w==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.topology.min.js" integrity="sha512-Q8zQ62C9TrSs+haao62yidKyViAJoDddNDJVvviAh5k0+r+woWt/67qs92+LclkupK0p46QItjyNVxk8bEmDFQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.ripple.min.js" integrity="sha512-3IvwEWtrBNl6wVSwVvD/c16Iu7nXq1TTo4bIN+xym/N2rfOeLFMP0cHy+khDoTWaLLF9tPIAzlTip2qfVkvz5A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.waves.min.js" integrity="sha512-OctlSjhUW90StGtQUwB1125p1fNP4wKyCxJsNA4VNhlXEyP8ks0KAp2Cmesl53AWpo7rQQeWhnxa4v9ehQjetw==" crossorigin="anonymous"></script>
+        <script>
+            VANTA.BIRDS({
+                el: "#sec1",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00
+            })
+            VANTA.HALO({
+                el: "#sec2",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+            })
+            VANTA.DOTS({
+                el: "#sec3",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xff6120,
+                color2: 0xe420ff,
+                backgroundColor: 0x461d1d,
+                size: 5.30,
+                spacing: 98.00
+            })
+            VANTA.RINGS({
+                el: "#sec4",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00
+            })
+            VANTA.NET({
+                el: "#sec5",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xe200ff
+            })
+            VANTA.WAVES({
+                el: "#sec6",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00
+            })
+            // VANTA.TRUNK({
+            //     el: "#sec6",
+            //     mouseControls: true,
+            //     touchControls: true,
+            //     gyroControls: false,
+            //     minHeight: 200.00,
+            //     minWidth: 200.00,
+            //     scale: 1.00,
+            //     scaleMobile: 1.00
+            // })
+            // VANTA.TOPOLOGY({
+            //     el: "#sec7",
+            //     mouseControls: true,
+            //     touchControls: true,
+            //     gyroControls: false,
+            //     minHeight: 200.00,
+            //     minWidth: 200.00,
+            //     scale: 1.00,
+            //     scaleMobile: 1.00,
+            //     color: 0x7875c3,
+            //     backgroundColor: 0x155252
+            // })
+        </script>
+    </div>
+</body>
+</html>
